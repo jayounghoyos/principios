@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrador de Propiedades</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/images/logo.svg" />
+</head>
+
+<body>
+    <div class="container">
+        <section class="preferences">
+            <h2>Preferencias</h2>
+            <form id="preferences-form">
+
+                <label for="urbanizacion">Tipo de unidad</label>
+                <select id="urbanizacion" name="urbanizacion">
+                    <option value="cerrada">urbanizacion cerrada</option>
+                    <option value="abierta">urbanizacion abierta</option>
+                </select>
+                <label class="visibility zonas" id="" for="zonas comunes">zonas comunes</label>
+                <select class="visibility zonas" id="" name="zonas-comunes">
+                    <option value="todos">piscina</option>
+                    <option value="venta">Gimnasio</option>
+                    <option value="alquiler">Piscina y Gimnasio</option>
+                </select>
+                <label for="venta-alquiler">Venta/Alquiler</label>
+                <select id="venta-alquiler" name="venta-alquiler">
+                    <option value="todos">Todos</option>
+                    <option value="venta">Venta</option>
+                    <option value="alquiler">Alquiler</option>
+                </select>
+
+                <label for="inmobiliaria">Inmobiliaria</label>
+                <select id="inmobiliaria" name="inmobiliaria">
+                    <option value="todos">Todos</option>
+                    <!-- Las opciones de inmobiliaria se cargarán dinámicamente desde el JSON -->
+                </select>
+                <label for="ubicacion">Ubicación</label>
+                <select id="ubicacion" name="ubicacion">
+                    <option value="todos">Todos</option>
+                    <!-- Las opciones de ubicación se cargarán dinámicamente desde el JSON -->
+                </select>
+
+                <!-- Botón de filtro general -->
+                <button type="button" id="filter-button">Filtrar</button>
+            </form>
+        </section>
+        <section class="filters">
+            <h2>Filtros</h2>
+            <form id="filters-form">
+                <!-- Agrega aquí los campos de filtros -->
+                <label for="categoria">Categoría</label>
+                <select id="categoria" name="categoria">
+                    <option value="todos">Todos</option>
+                    <option value="apartamento">Apartamento</option>
+                    <option value="casa">Casa</option>
+                    <!-- Agrega otras opciones de categoría -->
+                </select>
+                <label for="precio">Precio</label>
+                <input type="range" id="precio" name="precio" min="0" max="1000000" step="1000" value="0">
+                <label for="adaptado-discapacidad">Adaptado para Discapacidad</label>
+                <input type="checkbox" id="adaptado-discapacidad" name="adaptado-discapacidad">
+                <label for="calefaccion">Calefacción</label>
+                <input type="checkbox" id="calefaccion" name="calefaccion">
+                <label for="parqueadero">Parqueadero</label>
+                <input type="checkbox" id="parqueadero" name="parqueadero">
+                <label for="areas-verdes">Áreas Verdes</label>
+                <input type="checkbox" id="areas-verdes" name="areas-verdes">
+                <label for="num-banos">Cantidad de Baños</label>
+                <input type="number" id="num-banos" name="num-banos" min="1" value="1">
+                <label for="terraza">Terraza</label>
+                <input type="checkbox" id="terraza" name="terraza">
+                <label for="num-pisos">Cantidad de Pisos</label>
+                <input type="number" id="num-pisos" name="num-pisos" min="1" value="1">
+                <label for="amueblado">Amueblado</label>
+                <select id="amueblado" name="amueblado">
+                    <option value="todos">Todos</option>
+                    <option value="true">Amueblado</option>
+                    <option value="false">Sin Amueblar</option>
+                </select>
+                <label for="tamano">Tamaño (m²)</label>
+                <select id="tamano" name="tamano">
+                    <option value="todos">Todos</option>
+                    <option value="50">Menos de 50 m²</option>
+                    <option value="100">50 - 100 m²</option>
+                    <option value="150">100 - 150 m²</option>
+                    <option value="200">150 - 200 m²</option>
+                    <option value="250">Más de 200 m²</option>
+                </select>
+                <label for="acepta-mascotas">Acepta Mascotas</label>
+                <input type="checkbox" id="acepta-mascotas" name="acepta-mascotas">
+            </form>
+        </section>
+    </div>
+
+    <!-- Agrega el contenedor para las tarjetas de propiedades -->
+    <div class="property-cards" id="property-cards">
+        <!-- Las tarjetas de propiedades se cargarán aquí -->
+    </div>
+
+    <script src="script.js"></script>
+    <script src="script3.js"></script>
+</body>
+
+</html>
