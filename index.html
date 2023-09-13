@@ -21,8 +21,8 @@
                     <option value="cerrada">urbanizacion cerrada</option>
                     <option value="abierta">urbanizacion abierta</option>
                 </select>
-                <label class="visibility zonas" id="label-zonas" for="zonas comunes">zonas comunes</label>
-                <select class="visibility zonas" id="zonas-comunes" name="zonas-comunes">
+                <label class="zonas" id="label-zonas" for="zonas comunes">zonas comunes</label>
+                <select class="zonas" id="zonas-comunes" name="zonas-comunes">
                     <option value="todos">piscina</option>
                     <option value="venta">Gimnasio</option>
                     <option value="alquiler">Piscina y Gimnasio</option>
@@ -68,42 +68,45 @@
                 <input type="checkbox" id="calefaccion" name="calefaccion">
                 <label for="parqueadero">Parqueadero</label>
                 <input type="checkbox" id="parqueadero" name="parqueadero">
-                <label for="areas-verdes">Áreas Verdes</label>
-                <input type="checkbox" id="areas-verdes" name="areas-verdes">
-                <label for="num-banos">Cantidad de Baños</label>
-                <input type="number" id="num-banos" name="num-banos" min="1" value="1">
-                <label for="terraza">Terraza</label>
-                <input type="checkbox" id="terraza" name="terraza">
-                <label for="num-pisos">Cantidad de Pisos</label>
-                <input type="number" id="num-pisos" name="num-pisos" min="1" value="1">
-                <label for="amueblado">Amueblado</label>
-                <select id="amueblado" name="amueblado">
-                    <option value="todos">Todos</option>
-                    <option value="true">Amueblado</option>
-                    <option value="false">Sin Amueblar</option>
+                <label id="zonasVerdes" for=" areas-verdes ">Áreas Verdes</label>
+                <input type="checkbox" id="areas-verdes" name="areas-verdes ">
+                <label for="num-banos ">Cantidad de Baños</label>
+                <input type="number " id="num-banos " name="num-banos " min="1 " value="1 ">
+                <label for="terraza ">Terraza</label>
+                <input type="checkbox " id="terraza " name="terraza ">
+                <label for="num-pisos ">Cantidad de Pisos</label>
+                <input type="number " id="num-pisos " name="num-pisos " min="1 " value="1 ">
+                <label for="amueblado ">Amueblado</label>
+                <select id="amueblado " name="amueblado ">
+                    <option value="todos ">Todos</option>
+                    <option value="true ">Amueblado</option>
+                    <option value="false ">Sin Amueblar</option>
                 </select>
-                <label for="tamano">Tamaño (m²)</label>
-                <select id="tamano" name="tamano">
-                    <option value="todos">Todos</option>
-                    <option value="50">Menos de 50 m²</option>
-                    <option value="100">50 - 100 m²</option>
-                    <option value="150">100 - 150 m²</option>
-                    <option value="200">150 - 200 m²</option>
-                    <option value="250">Más de 200 m²</option>
+                <label for="tamano ">Tamaño (m²)</label>
+                <select id="tamano " name="tamano ">
+                    <option value="todos ">Todos</option>
+                    <option value="50 ">Menos de 50 m²</option>
+                    <option value="100 ">50 - 100 m²</option>
+                    <option value="150 ">100 - 150 m²</option>
+                    <option value="200 ">150 - 200 m²</option>
+                    <option value="250 ">Más de 200 m²</option>
                 </select>
-                <label for="acepta-mascotas">Acepta Mascotas</label>
-                <input type="checkbox" id="acepta-mascotas" name="acepta-mascotas">
+                <label class="acepta-mascotas">Acepta Mascotas</label>
+                <select name="acepta-mascotas" class="acepta-mascotas">
+                    <option value="si">SI</option>
+                    <option value="no">NO</option>
+                </select>
             </form>
         </section>
     </div>
 
     <!-- Agrega el contenedor para las tarjetas de propiedades -->
-    <div class="property-cards" id="property-cards">
+    <div class=" property-cards " id="property-cards ">
         <!-- Las tarjetas de propiedades se cargarán aquí -->
     </div>
 
-    <script src="script.js"></script>
-    <script src="script3.js"></script>
+    <script src="script.js "></script>
+    <script src="script3.js "></script>
 </body>
 
 </html>
