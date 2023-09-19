@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tarjeta.appendChild(precio);
 
         tarjeta.dataset.terraza = propiedad.terraza ? 'true' : 'false';
+        tarjeta.dataset.numPisos = propiedad.num_pisos;
 
         return tarjeta;
     }

@@ -78,3 +78,25 @@ function filtrarTarjetasPorTerraza(terraza) {
         }
     });
 }
+
+// Agregar un evento de cambio al campo de filtro de cantidad de pisos
+const filtroPisos = document.getElementById('filtro-pisos');
+filtroPisos.addEventListener('input', () => {
+    const valorFiltro = parseInt(filtroPisos.value, 10);
+    filtrarTarjetasPorPisos(valorFiltro);
+});
+
+// Función para filtrar las tarjetas de inmuebles por la cantidad de pisos
+function filtrarTarjetasPorPisos(cantidadPisos) {
+    const tarjetas = document.querySelectorAll('.property-card');
+
+    tarjetas.forEach((tarjeta) => {
+        const numPisos = parseInt(tarjeta.dataset.numPisos, 10); // Obtener la cantidad de pisos desde el atributo data
+
+        if (isNaN(cantidadPisos) || cantidadPisos === numPisos) {
+            tarjeta.style.display = 'block'; // Mostrar la tarjeta si coincide con el filtro o si el filtro está vacío
+        } else {
+            tarjeta.style.display = 'none'; // Ocultar la tarjeta si no coincide con el filtro
+        }
+    });
+}
