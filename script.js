@@ -57,3 +57,24 @@ function filtrarTarjetasPorBanos(cantidadBanos) {
         }
     });
 }
+// Agregar un evento de cambio al campo de filtro de terraza
+const filtroTerraza = document.getElementById('filtro-terraza');
+filtroTerraza.addEventListener('change', () => {
+    const valorFiltro = filtroTerraza.value;
+    filtrarTarjetasPorTerraza(valorFiltro);
+});
+
+// Función para filtrar las tarjetas de inmuebles por la presencia de terraza
+function filtrarTarjetasPorTerraza(terraza) {
+    const tarjetas = document.querySelectorAll('.property-card');
+
+    tarjetas.forEach((tarjeta) => {
+        const tieneTerraza = tarjeta.dataset.terraza === 'true'; // Obtener la información de terraza desde el atributo data
+
+        if (terraza === 'todos' || (terraza === 'true' && tieneTerraza) || (terraza === 'false' && !tieneTerraza)) {
+            tarjeta.style.display = 'block'; // Mostrar la tarjeta si coincide con el filtro o se selecciona "todos"
+        } else {
+            tarjeta.style.display = 'none'; // Ocultar la tarjeta si no coincide con el filtro
+        }
+    });
+}

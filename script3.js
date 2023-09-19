@@ -16,11 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para crear una tarjeta de propiedad
     function crearTarjeta(propiedad) {
-
-
-
         const tarjeta = document.createElement("div");
-        tarjeta.classList.add("property-card");
         tarjeta.classList.add("property-card");
         tarjeta.dataset.numBanos = propiedad.num_banos;
 
@@ -41,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
         tarjeta.appendChild(titulo);
         tarjeta.appendChild(ubicacion);
         tarjeta.appendChild(precio);
+
+        tarjeta.dataset.terraza = propiedad.terraza ? 'true' : 'false';
 
         return tarjeta;
     }
