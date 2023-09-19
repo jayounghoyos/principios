@@ -36,24 +36,3 @@ categorias.addEventListener("change", () => {
         inputVerdes.style.display = "none";
     }
 });
-// Agregar un evento de cambio al campo de filtro de baños
-const filtroBanos = document.getElementById('filtro-banos');
-filtroBanos.addEventListener('change', () => {
-    const valorFiltro = filtroBanos.value;
-    filtrarTarjetasPorBanos(valorFiltro);
-});
-
-// Función para filtrar las tarjetas de inmuebles por la cantidad de baños
-function filtrarTarjetasPorBanos(cantidadBanos) {
-    const tarjetas = document.querySelectorAll('.property-card');
-
-    tarjetas.forEach((tarjeta) => {
-        const numBanos = tarjeta.dataset.numBanos; // Obtener la cantidad de baños desde el atributo data
-
-        if (cantidadBanos === 'todos' || numBanos === cantidadBanos) {
-            tarjeta.style.display = 'block'; // Mostrar la tarjeta si coincide con el filtro o se selecciona "todos"
-        } else {
-            tarjeta.style.display = 'none'; // Ocultar la tarjeta si no coincide con el filtro
-        }
-    });
-}

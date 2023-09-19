@@ -16,13 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para crear una tarjeta de propiedad
     function crearTarjeta(propiedad) {
-
-
-
         const tarjeta = document.createElement("div");
         tarjeta.classList.add("property-card");
-        tarjeta.classList.add("property-card");
-        tarjeta.dataset.numBanos = propiedad.num_banos;
 
         const imagen = document.createElement("img");
         imagen.src = propiedad.imagen;
