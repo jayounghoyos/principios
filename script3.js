@@ -40,6 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         tarjeta.dataset.terraza = propiedad.terraza ? 'true' : 'false';
         tarjeta.dataset.numPisos = propiedad.num_pisos;
+        tarjeta.dataset.amueblado = propiedad.amueblado ? 'true' : 'false';
+        tarjeta.dataset.tamano = propiedad.tamanio_metros_cuadrados;
+        tarjeta.dataset.aceptaMascotas = propiedad.acepta_mascotas ? 'true' : 'false';
+        tarjeta.dataset.areasVerdes = propiedad.areas_verdes ? 'true' : 'false';
+        tarjeta.dataset.parqueadero = propiedad.parqueadero ? 'true' : 'false';
+        tarjeta.dataset.calefaccion = propiedad.calefaccion ? 'true' : 'false';
+        tarjeta.dataset.discapacidad = propiedad.adaptado_discapacidad ? 'true' : 'false';
+        tarjeta.dataset.precio = propiedad.precio;
 
         return tarjeta;
     }

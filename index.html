@@ -52,7 +52,6 @@
         <section class="filters">
             <h2>Filtros</h2>
             <form id="filters-form">
-                <!-- Agrega aquí los campos de filtros -->
                 <label for="categoria">Categoría</label>
                 <select id="categoria" name="categoria">
                     <option value="todos">Todos</option>
@@ -60,16 +59,45 @@
                     <option value="casa">Casa</option>
                     <!-- Agrega otras opciones de categoría -->
                 </select>
-                <label for="precio">Precio</label>
-                <input type="range" id="precio" name="precio" min="0" max="1000000" step="1000" value="0">
-                <label for="adaptado-discapacidad">Adaptado para Discapacidad</label>
-                <input type="checkbox" id="adaptado-discapacidad" name="adaptado-discapacidad">
-                <label for="calefaccion">Calefacción</label>
-                <input type="checkbox" id="calefaccion" name="calefaccion">
-                <label for="parqueadero">Parqueadero</label>
-                <input type="checkbox" id="parqueadero" name="parqueadero">
-                <label id="zonasVerdes" for=" areas-verdes ">Áreas Verdes</label>
-                <input type="checkbox" id="areas-verdes" name="areas-verdes ">
+
+                <label for="filtro-precio">Precio (en dólares)</label>
+                <input type="range" id="filtro-precio" name="filtro-precio" min="0" max="1000000" step="1000" value="0">
+                <span id="precio-min">0</span> - <span id="precio-max">1,000,000</span>
+
+                <br>
+                <br>
+                <label for="filtro-discapacidad">Adaptado para Discapacidad</label>
+                <select id="filtro-discapacidad" name="filtro-discapacidad">
+                    <option value="todos">Todos</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+
+                <label for="filtro-calefaccion">Calefacción</label>
+                <select id="filtro-calefaccion" name="filtro-calefaccion">
+                    <option value="todos">Todos</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+
+                <label for="filtro-parqueadero">Parqueadero</label>
+                <select id="filtro-parqueadero" name="filtro-parqueadero">
+                    <option value="todos">Todos</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+
+                <label for="filtro-areas-verdes">Áreas Verdes</label>
+                <select id="filtro-areas-verdes" name="filtro-areas-verdes">
+                    <option value="todos">Todos</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+
                 <label for="filtro-banos">Cantidad de Baños</label>
                 <select id="filtro-banos" name="filtro-banos">
                     <option value="todos">Todos</option>
@@ -77,35 +105,41 @@
                     <option value="2">2 Baños</option>
                     <option value="3">3 Baños</option>
                 </select>
+
                 <label for="filtro-terraza">Terraza</label>
                 <select id="filtro-terraza" name="filtro-terraza">
                     <option value="todos">Todos</option>
                     <option value="true">Con Terraza</option>
                     <option value="false">Sin Terraza</option>
                 </select>
+
                 <label for="filtro-pisos">Cantidad de Pisos</label>
                 <input type="number" id="filtro-pisos" name="filtro-pisos" min="1" value="1">
 
-                <label for="amueblado ">Amueblado</label>
-                <select id="amueblado " name="amueblado ">
-                    <option value="todos ">Todos</option>
-                    <option value="true ">Amueblado</option>
-                    <option value="false ">Sin Amueblar</option>
+                <label for="filtro-amueblado">Amueblado</label>
+                <select id="filtro-amueblado" name="filtro-amueblado">
+                    <option value="todos">Todos</option>
+                    <option value="true">Amueblado</option>
+                    <option value="false">Sin Amueblar</option>
                 </select>
-                <label for="tamano ">Tamaño (m²)</label>
-                <select id="tamano " name="tamano ">
-                    <option value="todos ">Todos</option>
-                    <option value="50 ">Menos de 50 m²</option>
-                    <option value="100 ">50 - 100 m²</option>
-                    <option value="150 ">100 - 150 m²</option>
-                    <option value="200 ">150 - 200 m²</option>
-                    <option value="250 ">Más de 200 m²</option>
+
+                <label for="filtro-tamano">Tamaño (m²)</label>
+                <select id="filtro-tamano" name="filtro-tamano">
+                    <option value="todos">Todos</option>
+                    <option value="50">Menos de 50 m²</option>
+                    <option value="100">50 - 100 m²</option>
+                    <option value="150">100 - 150 m²</option>
+                    <option value="200">150 - 200 m²</option>
+                    <option value="250">Más de 200 m²</option>
                 </select>
-                <label class="acepta-mascotas">Acepta Mascotas</label>
-                <select name="acepta-mascotas" class="acepta-mascotas">
-                    <option value="si">SI</option>
-                    <option value="no">NO</option>
+
+                <label for="filtro-acepta-mascotas">Acepta Mascotas</label>
+                <select id="filtro-acepta-mascotas" name="filtro-acepta-mascotas">
+                    <option value="todos">Todos</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
                 </select>
+
             </form>
         </section>
     </div>
