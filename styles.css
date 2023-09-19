@@ -53,8 +53,13 @@ select {
 .property-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 20px;
+}
+
+.property-cards img {
+    width: 200px;
+    height: 100px;
 }
 
 .visibility {

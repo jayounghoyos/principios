@@ -1,35 +1,54 @@
-// Obtén referencias a los elementos
-const tipoUrbanizacion = document.querySelector("#urbanizacion");
-const zonas = document.querySelectorAll(".zonas");
-const aceptaMascotas = document.querySelectorAll(".acepta-mascotas");
+document.addEventListener("DOMContentLoaded", () => {
+    // URL del archivo JSON
+    const jsonURL = 'datos.json'; // Reemplaza con la ubicación real de tu archivo JSON
 
-
-// Agrega un evento de cambio al elemento "urbanizacion"
-tipoUrbanizacion.addEventListener("change", () => {
-    if (tipoUrbanizacion.value === "abierta") {
-        // Oculta todos los elementos con la clase "zonas"
-        zonas.forEach(element => {
-            element.style.display = "none";
-        });
-        aceptaMascotas.forEach(element => {
-            element.style.display = "none";
-        });
-    } else {
-        // Muestra todos los elementos con la clase "zonas"
-        zonas.forEach(element => {
-            element.style.display = "block";
-        });
+    // Función para cargar los datos desde el archivo JSON
+    async function cargarDatosDesdeJSON() {
+        try {
+            const response = await fetch("/datos.json");
+            const datos = await response.json();
+            return datos;
+        } catch (error) {
+            console.error('Error al cargar datos desde JSON:', error);
+            return [];
+        }
     }
-});
 
-const zonasVerdes = document.querySelector("#zonasVerdes");
-const inputVerdes = document.querySelector("#areas-verdes");
-const categorias = document.querySelector("#categoria");
+    // Función para crear una tarjeta de propiedad
+    function crearTarjeta(propiedad) {
+        const tarjeta = document.createElement("div");
+        tarjeta.classList.add("property-card");
 
-categorias.addEventListener("change", () => {
-    if (tipoUrbanizacion.value === "abierta" &&
-        categorias.value === "apartamento") {
-        zonasVerdes.style.display = "none";
-        inputVerdes.style.display = "none";
+        const imagen = document.createElement("img");
+        imagen.src = propiedad.imagen;
+        imagen.alt = "Imagen de la propiedad";
+
+        const titulo = document.createElement("h3");
+        titulo.textContent = propiedad.categoria;
+
+        const ubicacion = document.createElement("p");
+        ubicacion.textContent = `Ubicación: ${propiedad.ubicacion}`;
+
+        const precio = document.createElement("p");
+        precio.textContent = `Precio: $${propiedad.precio}`;
+
+        tarjeta.appendChild(imagen);
+        tarjeta.appendChild(titulo);
+        tarjeta.appendChild(ubicacion);
+        tarjeta.appendChild(precio);
+
+        return tarjeta;
     }
+
+    // Obtén el contenedor de tarjetas
+    const contenedorTarjetas = document.getElementById('property-cards');
+
+    // Carga los datos y crea las tarjetas cuando los datos estén disponibles
+    cargarDatosDesdeJSON().then((datos) => {
+        datos.forEach((propiedad) => {
+            const tarjeta = crearTarjeta(propiedad);
+            contenedorTarjetas.appendChild(tarjeta);
+        });
+    });
+
 });

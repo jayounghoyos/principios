@@ -1,45 +1,38 @@
-// Carga el JSON de propiedades desde un archivo o URL
-fetch('/datos.json') // Reemplaza 'ruta/al/json.json' con la ubicación de tu JSON
-    .then(response => response.json())
-    .then(data => {
-        // Almacena los datos JSON en una variable global
-        window.propertyData = data;
+// Obtén referencias a los elementos
+const tipoUrbanizacion = document.querySelector("#urbanizacion");
+const zonas = document.querySelectorAll(".zonas");
+const aceptaMascotas = document.querySelectorAll(".acepta-mascotas");
 
-        // Llama a una función para mostrar las tarjetas de propiedades
-        mostrarTarjetas(data);
-    })
-    .catch(error => {
-        console.error('Error al cargar el JSON:', error);
-    });
 
-// Función para mostrar las tarjetas de propiedades en la página
-function mostrarTarjetas(propiedades) {
-    const propertyCards = document.getElementById('property-cards');
-    propertyCards.innerHTML = '';
+// Agrega un evento de cambio al elemento "urbanizacion"
+tipoUrbanizacion.addEventListener("change", () => {
+    if (tipoUrbanizacion.value === "abierta") {
+        // Oculta todos los elementos con la clase "zonas"
+        zonas.forEach(element => {
+            element.style.display = "none";
+        });
+        aceptaMascotas.forEach(element => {
+            element.style.display = "none";
+        });
+    } else {
+        // Muestra todos los elementos con la clase "zonas"
+        zonas.forEach(element => {
+            element.style.display = "block";
+        });
+        aceptaMascotas.forEach(element => {
+            element.style.display = "block";
+        });
+    }
+});
 
-    propiedades.forEach(property => {
-        // Crea una tarjeta para cada propiedad
-        const card = document.createElement('div');
-        card.classList.add('property-card');
+const zonasVerdes = document.querySelector("#zonasVerdes");
+const inputVerdes = document.querySelector("#areas-verdes");
+const categorias = document.querySelector("#categoria");
 
-        // Agrega el título (tipo de inmueble) a la tarjeta
-        const title = document.createElement('h3');
-        title.textContent = property.categoria; // Cambia a la propiedad que contiene el tipo de inmueble
-        card.appendChild(title);
-
-        // Agrega la inmobiliaria a la tarjeta
-        const inmobiliaria = document.createElement('p');
-        inmobiliaria.textContent = 'Inmobiliaria: ' + property.inmobiliaria;
-        card.appendChild(inmobiliaria);
-
-        // Crea la imagen con el tamaño especificado
-        const image = new Image();
-        image.src = property.imagen;
-        image.width = 200; // Ancho de 200px
-        image.height = 100; // Alto de 100px
-        card.appendChild(image);
-
-        // Agrega la tarjeta al contenedor de tarjetas
-        propertyCards.appendChild(card);
-    });
-}
+categorias.addEventListener("change", () => {
+    if (tipoUrbanizacion.value === "abierta" &&
+        categorias.value === "apartamento") {
+        zonasVerdes.style.display = "none";
+        inputVerdes.style.display = "none";
+    }
+});
