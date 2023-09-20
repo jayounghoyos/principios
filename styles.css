@@ -11,6 +11,11 @@ body {
     margin: 20px;
 }
 
+.logo_promo_bear {
+    display: block;
+    justify-content: center;
+}
+
 .preferences,
 .filters {
     width: 45%;
@@ -47,6 +52,34 @@ select {
     margin-bottom: 10px;
 }
 
+.logo_promo_bear .promo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-left: 20%;
+}
+
+.decorative-text {
+    margin-top: 20px;
+    margin-left: 40%;
+}
+
+.decorative-text p {
+    margin: 0;
+}
+
+.logo_promo_bear .logo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo_promo_bear .logo img {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50px;
+}
+
 
 /* Estilos para las tarjetas de propiedades */
 
@@ -80,6 +113,3 @@ select {
     max-width: 100%;
     height: auto;
 }
-
-
-/* Estilos adicionales según tus preferencias */
