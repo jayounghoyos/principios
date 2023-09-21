@@ -123,6 +123,27 @@
         "terraza": true,
         "num_pisos": 8,
         "imagen": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/385562018.jpg?k=dfdb838bf7b28962cc13754a5590fcf5ffcd806eeb35720a12f9101b4e416db9&o=&hp=1"
+    },
+    {
+        "id": 6,
+        "categoria": "apartamento",
+        "unidad_cerrada": true,
+        "zonas_comunes": true,
+        "venta_alquiler": "venta",
+        "amueblado": false,
+        "inmobiliaria": "Inmobiliaria X",
+        "tamanio_metros_cuadrados": 90,
+        "acepta_mascotas": true,
+        "ubicacion": "Ciudad A",
+        "precio": 160000,
+        "adaptado_discapacidad": true,
+        "calefaccion": true,
+        "parqueadero": false,
+        "areas_verdes": false,
+        "num_banos": 2,
+        "terraza": true,
+        "num_pisos": 8,
+        "imagen": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/385562018.jpg?k=dfdb838bf7b28962cc13754a5590fcf5ffcd806eeb35720a12f9101b4e416db9&o=&hp=1"
     }
 
 ]
